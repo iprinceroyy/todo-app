@@ -1,0 +1,21 @@
+{
+	"name": "todo-app-main",
+	"version": "1.0.0",
+	"description": "![Design preview for the Todo app coding challenge](./design/desktop-preview.jpg)",
+	"source": "index.html",
+	"scripts": {
+		"start": "parcel",
+		"build": "parcel build"
+	},
+	"keywords": [
+		"es6",
+		"classes",
+		"es6",
+		"modules"
+	],
+	"author": "Prince Roy",
+	"license": "ISC",
+	"devDependencies": {
+		"parcel": "^2.7.0"
+	}
+}

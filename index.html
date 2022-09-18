@@ -7,10 +7,66 @@
 
 		<link rel="icon" type="image/png" sizes="32x32" href="./src/assets/images/favicon-32x32.png" />
 
-		<title>Frontend Mentor | Todo app</title>
+		<!-- Main Stylesheet-->
+		<link rel="stylesheet" href="./src/sass/index.scss" />
+
+		<title>Todo app</title>
 	</head>
-	<body>
-		<main></main>
+	<body class="todo-app">
+		<header class="header todo-app__header">
+			<div>
+				<h1>TODO</h1>
+				<img src="./src/assets/images/icon-moon.svg" alt="moon" />
+			</div>
+
+			<form class="header__form">
+				<label for="todoText"></label>
+				<input type="text" id="todoText" placeholder="Create a new todo.." />
+			</form>
+		</header>
+
+		<main>
+			<div class="list todo-app__list">
+				<div class="list__item">
+					<h2>Jog around the park 3x</h2>
+					<img src="./src/assets/images/icon-cross.svg" alt="cross" />
+				</div>
+
+				<div class="list__item">
+					<h2>10 minutes meditation</h2>
+					<img src="./src/assets/images/icon-cross.svg" alt="cross" />
+				</div>
+
+				<div class="list__item">
+					<h2>JRead for 1hr</h2>
+					<img src="./src/assets/images/icon-cross.svg" alt="cross" />
+				</div>
+
+				<div class="list__item">
+					<h2>Pick up program</h2>
+					<img src="./src/assets/images/icon-cross.svg" alt="cross" />
+				</div>
+
+				<div class="list__item">
+					<h2>Complete Todo App on Frontend Mentor</h2>
+					<img src="./src/assets/images/icon-cross.svg" alt="cross" />
+				</div>
+
+				<div class="list__item list__item__statistics">
+					<span>5 items left</span>
+					<span>Clear Completed</span>
+				</div>
+			</div>
+
+			<div class="list__item_status">
+				<span>All</span>
+				<span>Active</span>
+				<span>Completed</span>
+			</div>
+
+			<p>Drag and drop to reorder list</p>
+		</main>
+
 		<!-- <div class="attribution">
 			Challenge by
 			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>

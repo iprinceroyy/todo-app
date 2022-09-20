@@ -82,15 +82,30 @@ main {
 	box-shadow: 0 1rem 3rem -2rem;
 
 	.list__item {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		display: grid;
+		grid-template-columns: 5% auto 5%;
+		place-items: center normal;
+		column-gap: 0.8rem;
 		font-size: 0.5rem;
 		padding: 1.5rem;
 		border-bottom: 1px solid var.$very-light-grayish-blue;
 
-		h2 {
-			display: inline;
+		input[type='checkbox'] {
+			appearance: none;
+			height: 1.5rem;
+			width: 1.5rem;
+			border: 1px solid var.$very-light-grayish-blue;
+			border-radius: 50%;
+		}
+
+		input[type='checkbox']:checked {
+			background-image: var.$check-background;
+			display: grid;
+			place-items: center;
+		}
+
+		input[type='checkbox']:checked::after {
+			content: url('../assets/images/icon-check.svg');
 		}
 
 		&:last-child {
@@ -98,6 +113,8 @@ main {
 		}
 
 		&__statistics {
+			display: flex;
+			justify-content: space-between;
 			font-size: 0.9rem;
 		}
 	}
@@ -106,7 +123,7 @@ main {
 .list__item_status {
 	width: min(83%, 450px);
 	position: absolute;
-	top: 24.5rem;
+	top: 26.5rem;
 	display: flex;
 	gap: 1.5rem;
 	justify-content: center;
@@ -119,7 +136,7 @@ main {
 	box-shadow: 0 0.5rem 1.5rem -1.2rem;
 
 	@media (min-width: 45rem) {
-		top: 20rem;
+		top: 21.9rem;
 		background-color: transparent;
 		box-shadow: none;
 		font-size: 0.8rem;
@@ -129,6 +146,6 @@ main {
 
 p {
 	position: absolute;
-	top: 30rem;
+	top: 33rem;
 	color: var.$dark-grayish-blue;
 }

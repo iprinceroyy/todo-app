@@ -18,58 +18,60 @@
 				<h1>TODO</h1>
 				<img src="./src/assets/images/icon-moon.svg" alt="moon" />
 			</div>
-
-			<form class="header__form">
-				<label for="todoText"></label>
-				<input type="text" id="todoText" placeholder="Create a new todo.." />
-			</form>
 		</header>
 
-		<main>
-			<div class="list todo-app__list">
-				<div class="list__item">
+		<main class="todo todo-app__main">
+			<div class="todo__container">
+				<form class="todo__inputs">
 					<input type="checkbox" aria-label="check" />
-					<h2>Jog around the park 3x</h2>
-					<img src="./src/assets/images/icon-cross.svg" alt="cross" />
+					<input type="text" aria-label="todoText" placeholder="Create a new todo.." />
+				</form>
+
+				<div class="list todo__list">
+					<div class="list__item">
+						<input type="checkbox" aria-label="check" />
+						<h2>Jog around the park 3x</h2>
+						<img src="./src/assets/images/icon-cross.svg" alt="cross" />
+					</div>
+
+					<div class="list__item">
+						<input type="checkbox" aria-label="check" />
+						<h2>10 minutes meditation</h2>
+						<img src="./src/assets/images/icon-cross.svg" alt="cross" />
+					</div>
+
+					<div class="list__item">
+						<input type="checkbox" aria-label="check" />
+						<h2>Read for 1hr</h2>
+						<img src="./src/assets/images/icon-cross.svg" alt="cross" />
+					</div>
+
+					<div class="list__item">
+						<input type="checkbox" aria-label="check" />
+						<h2>Pick up program</h2>
+						<img src="./src/assets/images/icon-cross.svg" alt="cross" />
+					</div>
+
+					<div class="list__item">
+						<input type="checkbox" aria-label="check" />
+						<h2>Complete Todo App on Frontend Mentor</h2>
+						<img src="./src/assets/images/icon-cross.svg" alt="cross" />
+					</div>
+
+					<div class="list__item list__item__statistics">
+						<span>5 items left</span>
+						<span>Clear Completed</span>
+					</div>
 				</div>
 
-				<div class="list__item">
-					<input type="checkbox" aria-label="check" />
-					<h2>10 minutes meditation</h2>
-					<img src="./src/assets/images/icon-cross.svg" alt="cross" />
+				<div class="list__item_status">
+					<span>All</span>
+					<span>Active</span>
+					<span>Completed</span>
 				</div>
 
-				<div class="list__item">
-					<input type="checkbox" aria-label="check" />
-					<h2>Read for 1hr</h2>
-					<img src="./src/assets/images/icon-cross.svg" alt="cross" />
-				</div>
-
-				<div class="list__item">
-					<input type="checkbox" aria-label="check" />
-					<h2>Pick up program</h2>
-					<img src="./src/assets/images/icon-cross.svg" alt="cross" />
-				</div>
-
-				<div class="list__item">
-					<input type="checkbox" aria-label="check" />
-					<h2>Complete Todo App on Frontend Mentor</h2>
-					<img src="./src/assets/images/icon-cross.svg" alt="cross" />
-				</div>
-
-				<div class="list__item list__item__statistics">
-					<span>5 items left</span>
-					<span>Clear Completed</span>
-				</div>
+				<p>Drag and drop to reorder list</p>
 			</div>
-
-			<div class="list__item_status">
-				<span>All</span>
-				<span>Active</span>
-				<span>Completed</span>
-			</div>
-
-			<p>Drag and drop to reorder list</p>
 		</main>
 
 		<!-- <div class="attribution">

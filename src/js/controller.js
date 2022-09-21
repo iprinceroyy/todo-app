@@ -1,16 +1,28 @@
-console.log('Server started..');
+import * as model from './model';
 import listView from './views/listView';
-import searchView from './views/searchView';
+import addView from './views/addView';
+import markView from './views/markView';
 
+// To add task
 const controlInputs = () => {
 	// 1) Get task
-	const query = searchView.getQuery();
+	const task = addView.getItem();
 
-	// 2) Render task
-	listView.render(query);
+	// 2) Add task
+	model.addTask(task);
+
+	// 3) Render task
+	listView.render(model.state.todo);
+};
+
+const controlCompleted = () => {};
+
+const controlDelete = () => {
+	// 1) Get element to be deleted
+	// 2) Render new list
 };
 
 const init = () => {
-	searchView.addHandlerSubmit(controlInputs);
+	addView.addHandlerSubmit(controlInputs);
 };
 init();

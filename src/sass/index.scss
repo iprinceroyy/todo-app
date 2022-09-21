@@ -126,6 +126,10 @@ input[type='checkbox']:checked::after {
 	content: url('../assets/images/icon-check.svg');
 }
 
+input[type='checkbox']:checked + h2 {
+	text-decoration: line-through;
+}
+
 .list__item_status {
 	display: flex;
 	gap: 1.5rem;

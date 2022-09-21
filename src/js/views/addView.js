@@ -1,10 +1,10 @@
-class SearchView {
+class AddView {
 	_parentEl = document.querySelector('.todo__inputs');
 
-	getQuery() {
-		const query = this._parentEl.lastElementChild.value;
+	getItem() {
+		const task = this._parentEl.lastElementChild.value;
 		this._clear();
-		return query;
+		return task;
 	}
 
 	_clear() {
@@ -19,4 +19,4 @@ class SearchView {
 	}
 }
 
-export default new SearchView();
+export default new AddView();

@@ -19,7 +19,7 @@ class ListView {
 	_generateMarkup(id, task) {
 		const html = `
         <div class="list__item" data-key="${id}">
-					<input type="checkbox" aria-label="check" />
+					<input type="checkbox" aria-label="check" data-mark-task />
 					<h2>${task}</h2>
 					<img src="${cross}" alt="cross" />
 				</div>

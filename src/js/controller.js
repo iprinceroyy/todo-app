@@ -15,7 +15,13 @@ const controlInputs = () => {
 	listView.render(model.state.todo);
 };
 
-const controlCompleted = () => {};
+const controlCompleted = () => {
+	// 1) get id
+	const id = markView.getMark();
+
+	// 2) mark task with that as completed
+	model.markCompleted(id);
+};
 
 const controlDelete = () => {
 	// 1) Get element to be deleted
@@ -24,5 +30,6 @@ const controlDelete = () => {
 
 const init = () => {
 	addView.addHandlerSubmit(controlInputs);
+	markView.addHandlerMark(controlCompleted);
 };
 init();

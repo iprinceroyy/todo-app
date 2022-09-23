@@ -13,13 +13,14 @@ class ListView {
 					`;
 
 		this._parentEl.insertAdjacentHTML('afterbegin', html);
-		todoList.map(({ id, task }) => this._generateMarkup(id, task));
+		todoList.map(todo => this._generateMarkup(todo));
 	}
 
-	_generateMarkup(id, task) {
+	_generateMarkup(todo) {
+		const { id, task, marked } = todo;
 		const html = `
         <div class="list__item" data-key="${id}">
-					<input type="checkbox" aria-label="check" data-mark-task />
+					<input type="checkbox" aria-label="check" data-mark-task ${marked ? 'checked' : ''} />
 					<h2>${task}</h2>
 					<img src="${cross}" alt="cross" />
 				</div>

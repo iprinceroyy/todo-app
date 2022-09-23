@@ -5,7 +5,7 @@ export const state = {
 };
 
 export const addTask = task => {
-	state.todo.push({ id: Date.now().toString(), task, completed: false });
+	state.todo.push({ id: Date.now().toString(), task, marked: false });
 };
 
 export const markCompleted = id => {
@@ -13,9 +13,9 @@ export const markCompleted = id => {
 	state.completed = [];
 
 	state.todo.forEach(task => {
-		if (task.id === id) task.completed = !task.completed;
+		if (task.id === id) task.marked = !task.marked;
 
-		task.completed && state.completed.push(task);
+		task.marked && state.completed.push(task);
 	});
 	console.log(state.completed);
 };

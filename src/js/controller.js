@@ -21,6 +21,10 @@ const controlCompleted = () => {
 
 	// 2) mark task with that as completed
 	model.markCompleted(id);
+
+	// 3) re-render
+	const { todo, active } = model.state;
+	listView.render(todo, active);
 };
 
 const controlDelete = () => {

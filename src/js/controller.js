@@ -2,6 +2,7 @@ import * as model from './model';
 import listView from './views/listView';
 import addView from './views/addView';
 import markView from './views/markView';
+import deleteView from './views/deleteView';
 
 // To add task
 const controlInputs = () => {

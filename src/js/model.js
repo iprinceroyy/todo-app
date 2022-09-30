@@ -20,5 +20,4 @@ export const markCompleted = id => {
 
 		!task.marked && state.active.push(task);
 	});
-	console.log(state.completed);
 };

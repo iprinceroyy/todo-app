@@ -7,8 +7,8 @@ class ListView {
 		this._parentEl.innerHTML = '';
 		const html = `
 					<div class="list__item list__item__statistics">
-						<span>${activeList ? activeList.length : todoList.length} items left</span>
-						<span>Clear Completed</span>
+						<p>${activeList ? activeList.length : todoList.length} items left</p>
+						<p class="clear">Clear Completed</p>
 					</div>
 					`;
 

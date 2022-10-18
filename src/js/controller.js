@@ -25,16 +25,17 @@ const controlCompleted = () => {
 
 	// 3) re-render
 	const { todo, active } = model.state;
+	console.log(active);
 	listView.render(todo, active);
 };
 
 const controlDelete = () => {
-	// 1) Get element to be deleted
-	// 2) Render new list
+	listView.render(model.state.active);
 };
 
 const init = () => {
 	addView.addHandlerSubmit(controlInputs);
 	markView.addHandlerMark(controlCompleted);
+	deleteView.addHandler(controlDelete);
 };
 init();

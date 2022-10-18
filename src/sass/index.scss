@@ -155,6 +155,12 @@ input[type='checkbox']:checked + h2 {
 		box-shadow: none;
 	}
 }
+.clear {
+	&:active,
+	&:hover {
+		cursor: pointer;
+	}
+}
 
 p {
 	text-align: center;

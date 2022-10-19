@@ -3,6 +3,7 @@ import listView from './views/listView';
 import addView from './views/addView';
 import markView from './views/markView';
 import deleteView from './views/deleteView';
+import clearView from './views/clearView';
 
 // To add task
 const controlInputs = () => {
@@ -25,17 +26,25 @@ const controlCompleted = () => {
 
 	// 3) re-render
 	const { todo, active } = model.state;
-	console.log(active);
 	listView.render(todo, active);
 };
 
+const controlClear = () => {
+	// 1) clear completed task
+	model.clearCompleted();
+
+	// 2) re-render
+	listView.render(model.state.todo);
+};
+
 const controlDelete = () => {
-	listView.render(model.state.active);
+	deleteView.getId();
 };
 
 const init = () => {
 	addView.addHandlerSubmit(controlInputs);
 	markView.addHandlerMark(controlCompleted);
-	deleteView.addHandler(controlDelete);
+	clearView.addHandler(controlClear);
+	deleteView.addHandlerDelete(controlDelete);
 };
 init();

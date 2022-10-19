@@ -21,3 +21,10 @@ export const markCompleted = id => {
 		!task.marked && state.active.push(task);
 	});
 };
+
+export const clearCompleted = () => {
+	if (state.active.length == 0) return;
+	state.todo = state.active;
+};
+
+export const deleteTask = () => {};

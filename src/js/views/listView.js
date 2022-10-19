@@ -22,7 +22,7 @@ class ListView {
         <div class="list__item" data-key="${id}">
 					<input type="checkbox" aria-label="check" data-mark-task ${marked ? 'checked' : ''} />
 					<h2>${task}</h2>
-					<img src='${cross}' class=${marked ? 'hide-cross' : ''} alt='cross' />
+					<img src='${cross}' class=${marked ? 'hide-cross' : 'cross'} alt='cross' />
 				</div>
         `;
 

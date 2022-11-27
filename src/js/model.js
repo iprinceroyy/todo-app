@@ -28,5 +28,5 @@ export const clearCompleted = () => {
 };
 
 export const deleteTask = id => {
-	console.log(id);
+	state.todo = [...state.todo.filter(item => item.id !== id)];
 };

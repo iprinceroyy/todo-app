@@ -14,7 +14,7 @@ const controlInputs = () => {
 	model.addTask(task);
 
 	// 3) Render task
-	listView.render(model.state.todo);
+	listView.render(model.state.todo, model.state.active);
 };
 
 const controlCompleted = () => {
@@ -25,8 +25,8 @@ const controlCompleted = () => {
 	model.markCompleted(id);
 
 	// 3) re-render
-	const { todo } = model.state;
-	listView.render(todo);
+	const { todo, active } = model.state;
+	listView.render(todo, active);
 };
 
 const controlClear = () => {
@@ -34,13 +34,18 @@ const controlClear = () => {
 	model.clearCompleted();
 
 	// 2) re-render
-	listView.render(model.state.todo);
+	listView.render(model.state.todo, model.state.active);
 };
 
 const controlDelete = () => {
-	const key1 = deleteView.getID();
+	// 1) get key id
+	const keyID = deleteView.getID();
 
-	model.deleteTask(key1);
+	// 2) delete the task with the above id
+	model.deleteTask(keyID);
+
+	// 3) re-render
+	listView.render(model.state.todo, model.state.active);
 };
 
 const init = () => {

@@ -3,11 +3,11 @@ import cross from '../../assets/images/icon-cross.svg';
 class ListView {
 	_parentEl = document.querySelector('.todo__list');
 
-	render(todoList) {
+	render(todoList, activeList = '') {
 		this._parentEl.innerHTML = '';
 		const html = `
 					<div class="list__item list__item__statistics">
-						<p>${todoList.length} items left</p>
+						<p>${activeList.length !== 0 ? activeList.length : todoList.length} items left</p>
 						<p class="clear">Clear Completed</p>
 					</div>
 					`;

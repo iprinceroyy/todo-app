@@ -66,14 +66,17 @@ main {
 .todo__inputs {
 	width: 100%;
 	display: flex;
-	align-items: center;
 	gap: 1rem;
 	border-radius: 5px;
 	background-color: var.$very-light-gray;
 	padding-block: 0.8rem;
-	padding-inline: 1.2rem;
+	padding-inline: 1.5rem;
+
+	& > input[type='checkbox'] {
+	}
 
 	input[type='text'] {
+		width: 100%;
 		font-family: var.$font-family;
 		border: none;
 		outline: 3px solid transparent;
@@ -148,8 +151,8 @@ input[type='checkbox']:checked + h2 {
 
 	@media (min-width: 45rem) {
 		position: absolute;
-		top: 27.8rem;
 		left: 7rem;
+		bottom: 4rem;
 		font-size: 0.8rem;
 		background-color: transparent;
 		box-shadow: none;

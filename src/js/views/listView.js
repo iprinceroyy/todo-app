@@ -3,11 +3,11 @@ import cross from '../../assets/images/icon-cross.svg';
 class ListView {
 	_parentEl = document.querySelector('.todo__list');
 
-	render(todoList, activeList) {
+	render(todoList) {
 		this._parentEl.innerHTML = '';
 		const html = `
 					<div class="list__item list__item__statistics">
-						<p>${activeList ? activeList.length : todoList.length} items left</p>
+						<p>${todoList.length} items left</p>
 						<p class="clear">Clear Completed</p>
 					</div>
 					`;
@@ -22,7 +22,9 @@ class ListView {
         <div class="list__item" data-key="${id}">
 					<input type="checkbox" aria-label="check" data-mark-task ${marked ? 'checked' : ''} />
 					<h2>${task}</h2>
-					<img src='${cross}' class=${marked ? 'hide-cross' : 'cross'} alt='cross' />
+					<div>
+						<img src='${cross}' class=${marked ? 'hide-cross' : 'cross'} alt='cross' />
+					</div>
 				</div>
         `;
 

@@ -24,7 +24,9 @@ export const markCompleted = id => {
 
 export const clearCompleted = () => {
 	if (state.active.length == 0) return;
-	state.todo = state.active;
+	state.todo = [...state.todo.filter(item => !item.marked)];
 };
 
-export const deleteTask = () => {};
+export const deleteTask = id => {
+	console.log(id);
+};

@@ -25,8 +25,8 @@ const controlCompleted = () => {
 	model.markCompleted(id);
 
 	// 3) re-render
-	const { todo, active } = model.state;
-	listView.render(todo, active);
+	const { todo } = model.state;
+	listView.render(todo);
 };
 
 const controlClear = () => {
@@ -38,7 +38,9 @@ const controlClear = () => {
 };
 
 const controlDelete = () => {
-	deleteView.getId();
+	const key1 = deleteView.getID();
+
+	model.deleteTask(key1);
 };
 
 const init = () => {

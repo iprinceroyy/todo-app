@@ -1,16 +1,18 @@
 class DeleteView {
 	_parentEl = document.querySelector('.todo__list');
+	_elKey;
 
-	getId() {
-		this._parentEl.addEventListener('click', e => {
-			if (!e.target.classList.contains('.cross')) return;
-			console.log('hey');
-		});
+	getID() {
+		return this._elKey;
 	}
 
 	addHandlerDelete(handler) {
+		handler();
+
 		this._parentEl.addEventListener('click', e => {
-			handler();
+			if (!e.target.classList.contains('cross')) return;
+			this._elKey = e.target.closest('.list__item').dataset.key;
+			console.log(this._elKey);
 		});
 	}
 }

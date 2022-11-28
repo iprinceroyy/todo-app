@@ -170,3 +170,13 @@ p {
 	color: var.$dark-grayish-blue;
 	margin-block-start: 1rem;
 }
+
+.all,
+.active,
+.completed {
+	cursor: pointer;
+	&:active,
+	&:hover {
+		color: var.$bright-blue;
+	}
+}

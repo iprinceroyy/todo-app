@@ -4,6 +4,8 @@ import addView from './views/addView';
 import markView from './views/markView';
 import deleteView from './views/deleteView';
 import clearView from './views/clearView';
+import allView from './views/allView';
+import activeView from './views/activeView';
 
 // To add task
 const controlInputs = () => {
@@ -48,10 +50,20 @@ const controlDelete = () => {
 	listView.render(model.state.todo, model.state.active);
 };
 
+const controlAll = () => {
+	listView.render(model.state.todo);
+};
+
+const controlActive = () => {
+	listView.render(model.state.active);
+};
+
 const init = () => {
 	addView.addHandlerSubmit(controlInputs);
 	markView.addHandlerMark(controlCompleted);
 	clearView.addHandler(controlClear);
 	deleteView.addHandlerDelete(controlDelete);
+	allView.addHandlerAllView(controlAll);
+	activeView.addHandlerActiveView(controlActive);
 };
 init();

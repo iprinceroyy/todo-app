@@ -56,6 +56,7 @@ const controlAll = () => {
 
 const controlActive = () => {
 	listView.render(model.state.active);
+	console.log(model.state.active);
 };
 
 const init = () => {

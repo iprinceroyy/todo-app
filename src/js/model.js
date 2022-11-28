@@ -6,6 +6,7 @@ export const state = {
 
 export const addTask = task => {
 	state.todo.push({ id: Date.now().toString(), task, marked: false });
+	state.active.push({ id: Date.now().toString(), task, marked: false });
 };
 
 export const markCompleted = id => {
@@ -20,6 +21,8 @@ export const markCompleted = id => {
 
 		!task.marked && state.active.push(task);
 	});
+	console.log(state.active);
+	console.log(state.completed);
 };
 
 export const clearCompleted = () => {
@@ -29,4 +32,5 @@ export const clearCompleted = () => {
 
 export const deleteTask = id => {
 	state.todo = [...state.todo.filter(item => item.id !== id)];
+	state.active = [...state.active.filter(item => item.id !== id)];
 };

@@ -7,7 +7,7 @@ import clearView from './views/clearView';
 import allView from './views/allView';
 import activeView from './views/activeView';
 import completedView from './views/completedView';
-
+import darkView from './views/darkView';
 // To add task
 const controlInputs = () => {
 	// 1) Get task
@@ -63,6 +63,8 @@ const controlCompleted = () => {
 	listView.render(model.state.completed, model.state.active);
 };
 
+const controlTheme = () => {};
+
 const init = () => {
 	addView.addHandlerSubmit(controlInputs);
 	markView.addHandlerMark(controlMark);
@@ -72,5 +74,6 @@ const init = () => {
 	activeView.addHandlerActiveView(controlActive);
 	completedView.addHandlerCompleteView(controlCompleted);
 	listView.render(model.state.todo, model.state.active);
+	darkView.addHandlerToggle(controlTheme);
 };
 init();

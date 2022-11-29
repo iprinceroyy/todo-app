@@ -1,4 +1,5 @@
 @use 'variables' as var;
+@use 'theme';
 
 *,
 *::before,
@@ -21,13 +22,8 @@ body {
 	display: flex;
 	justify-content: center;
 	padding-block-start: 4rem;
-	background-image: url('../assets/images/bg-mobile-light.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
-
-	@media (min-width: 45rem) {
-		background-image: url('../assets/images/bg-desktop-light.jpg');
-	}
 
 	& > div {
 		width: min(83%, 450px);
@@ -48,7 +44,6 @@ body {
 }
 
 main {
-	background-color: var.$very-light-gray;
 	display: grid;
 	place-items: normal center;
 }
@@ -68,27 +63,21 @@ main {
 	display: flex;
 	gap: 1rem;
 	border-radius: 5px;
-	background-color: var.$very-light-gray;
 	padding-block: 0.8rem;
 	padding-inline: 1.5rem;
-
-	& > input[type='checkbox'] {
-	}
 
 	input[type='text'] {
 		width: 100%;
 		font-family: var.$font-family;
 		border: none;
 		outline: 3px solid transparent;
+		background-color: inherit;
 	}
 }
 
 .todo__list {
-	color: var.$dark-grayish-blue;
 	border: none;
 	border-radius: 5px;
-	background-color: #fff;
-	box-shadow: 0 1rem 3rem -2rem;
 
 	.list__item {
 		display: grid;
@@ -97,7 +86,6 @@ main {
 		column-gap: 0.8rem;
 		font-size: 0.5rem;
 		padding: 1.5rem;
-		border-bottom: 1px solid var.$very-light-grayish-blue;
 
 		&:hover {
 			cursor: pointer;
@@ -123,7 +111,6 @@ input[type='checkbox'] {
 	appearance: none;
 	height: 1.5rem;
 	width: 1.5rem;
-	border: 1px solid var.$very-light-grayish-blue;
 	border-radius: 50%;
 	cursor: pointer;
 }
@@ -147,9 +134,7 @@ input[type='checkbox']:checked + h2 {
 	gap: 1.5rem;
 	justify-content: center;
 	padding: 1rem;
-	color: var.$dark-grayish-blue;
 	font-weight: var.$fw-700;
-	background-color: #fff;
 	border: none;
 	border-radius: 8px;
 	box-shadow: 0 0.5rem 1.5rem -1.2rem;
@@ -166,16 +151,5 @@ input[type='checkbox']:checked + h2 {
 
 p {
 	text-align: center;
-	color: var.$dark-grayish-blue;
 	margin-block-start: 1rem;
-}
-
-.all,
-.active,
-.completed {
-	cursor: pointer;
-	&:active,
-	&:hover {
-		color: var.$bright-blue;
-	}
 }

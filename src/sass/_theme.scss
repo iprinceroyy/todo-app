@@ -1,0 +1,130 @@
+@use 'variables' as var;
+
+.theme-1 {
+	.todo-app__header {
+		background-image: url('../assets/images/bg-mobile-light.jpg');
+
+		@media (min-width: 45rem) {
+			background-image: url('../assets/images/bg-desktop-light.jpg');
+		}
+	}
+
+	main {
+		background-color: var.$very-light-gray;
+	}
+
+	.todo__inputs {
+		background-color: var.$very-light-gray;
+
+		input[type='text'] {
+			color: var.$very-dark-grayish-blue;
+		}
+
+		::placeholder {
+			color: var.$dark-grayish-blue;
+		}
+	}
+
+	.todo__list {
+		color: var.$dark-grayish-blue;
+		background-color: #fff;
+		box-shadow: 0 1rem 3rem -2rem var.$dark-grayish-blue;
+
+		.list__item {
+			border-bottom: 1px solid var.$very-light-grayish-blue;
+		}
+	}
+
+	input[type='checkbox'] {
+		border: 1px solid var.$very-light-grayish-blue;
+	}
+
+	input[type='checkbox']:checked + h2 {
+		color: var.$light-grayish-blue;
+	}
+
+	.list__item_status {
+		color: var.$dark-grayish-blue;
+		background-color: #fff;
+	}
+
+	p {
+		color: var.$dark-grayish-blue;
+	}
+
+	.all,
+	.active,
+	.completed {
+		cursor: pointer;
+		&:active,
+		&:hover {
+			color: var.$bright-blue;
+		}
+	}
+}
+
+/*  Theme 2  */
+
+.theme-2 {
+	.todo-app__header {
+		background-image: url('../assets/images/bg-mobile-dark.jpg');
+
+		@media (min-width: 45rem) {
+			background-image: url('../assets/images/bg-desktop-dark.jpg');
+		}
+	}
+
+	main {
+		background-color: var.$very-dark-blue;
+	}
+
+	.todo__inputs {
+		background-color: var.$very-dark-desaturated-blue;
+
+		input[type='text'] {
+			color: var.$light-grayish-blue;
+		}
+
+		::placeholder {
+			color: var.$dark-grayish-blue;
+		}
+	}
+
+	.todo__list {
+		color: var.$light-grayish-blue;
+		background-color: var.$very-dark-desaturated-blue;
+		box-shadow: 0 2rem 3rem -2rem black;
+
+		.list__item {
+			border-bottom: 1px solid var.$dark-blue;
+		}
+	}
+
+	input[type='checkbox'] {
+		border: 1px solid var.$dark-blue;
+	}
+
+	input[type='checkbox']:checked + h2 {
+		color: var.$very-dark-grayish-blue;
+	}
+
+	.list__item_status {
+		color: var.$dark-grayish-blue;
+		background-color: var.$very-dark-desaturated-blue;
+		box-shadow: 0 1rem 3rem -2rem black;
+	}
+
+	p {
+		color: var.$dark-grayish-blue;
+	}
+
+	.all,
+	.active,
+	.completed {
+		cursor: pointer;
+		&:active,
+		&:hover {
+			color: var.$light-blue;
+		}
+	}
+}

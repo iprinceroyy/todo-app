@@ -1,12 +1,8 @@
 class AllView {
-	_status = document.querySelector('.list__item_status');
+	_status = document.querySelector('.all');
 
 	addHandlerAllView(handler) {
-		this._status.addEventListener('click', e => {
-			if (!e.target.classList.contains('all')) return;
-			handler();
-			console.log(e.target);
-		});
+		this._status.addEventListener('click', handler);
 	}
 }
 

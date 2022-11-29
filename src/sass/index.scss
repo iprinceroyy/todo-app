@@ -99,6 +99,10 @@ main {
 		padding: 1.5rem;
 		border-bottom: 1px solid var.$very-light-grayish-blue;
 
+		&:hover {
+			cursor: pointer;
+		}
+
 		&:last-child {
 			border: none;
 		}
@@ -121,6 +125,7 @@ input[type='checkbox'] {
 	width: 1.5rem;
 	border: 1px solid var.$very-light-grayish-blue;
 	border-radius: 50%;
+	cursor: pointer;
 }
 
 input[type='checkbox']:checked {
@@ -156,12 +161,6 @@ input[type='checkbox']:checked + h2 {
 		font-size: 0.8rem;
 		background-color: transparent;
 		box-shadow: none;
-	}
-}
-.clear {
-	&:active,
-	&:hover {
-		cursor: pointer;
 	}
 }
 

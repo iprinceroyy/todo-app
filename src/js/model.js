@@ -55,7 +55,7 @@ const init = () => {
 	const activeTasks = localStorage.getItem('active');
 	const completedTasks = localStorage.getItem('completed');
 
-	//if (!todoTasks || !activeTasks || completedTasks) return;
+	if (!todoTasks) return;
 
 	// Initialize the state with the fetched data
 	state.todo = JSON.parse(todoTasks);

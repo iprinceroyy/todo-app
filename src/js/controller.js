@@ -57,12 +57,10 @@ const controlAll = () => {
 
 const controlActive = () => {
 	listView.render(model.state.active);
-	console.log(model.state.active);
 };
 
 const controlCompleted = () => {
-	listView.render(model.state.completed);
-	console.log(model.state.completed, model.state.active);
+	listView.render(model.state.completed, model.state.active);
 };
 
 const init = () => {

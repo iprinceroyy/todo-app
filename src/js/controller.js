@@ -63,8 +63,6 @@ const controlCompleted = () => {
 	listView.render(model.state.completed, model.state.active);
 };
 
-const controlTheme = () => {};
-
 const init = () => {
 	addView.addHandlerSubmit(controlInputs);
 	markView.addHandlerMark(controlMark);
@@ -74,6 +72,6 @@ const init = () => {
 	activeView.addHandlerActiveView(controlActive);
 	completedView.addHandlerCompleteView(controlCompleted);
 	listView.render(model.state.todo, model.state.active);
-	darkView.addHandlerToggle(controlTheme);
+	darkView.addHandlerToggle();
 };
 init();

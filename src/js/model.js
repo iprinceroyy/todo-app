@@ -1,3 +1,5 @@
+import { icon } from '../assets/images/icon-moon.svg';
+
 export const state = {
 	todo: [],
 	completed: [],
@@ -70,3 +72,55 @@ const clearBookmarks = () => {
 	localStorage.clear('completed');
 };
 //clearBookmarks();
+
+// Push notifications
+const notificationBtn = document.getElementById('enable');
+
+const checkNotificationPromise = () => {
+	try {
+		Notification.requestPermission().then();
+	} catch (e) {
+		return false;
+	}
+
+	return true;
+};
+
+const askNotificationPermission = () => {
+	const handlePermission = permission =>
+	Notification.permission === 'granted' ? 'none' : 'block');
+
+	if (!('Notification' in window)) {
+		console.log('This browser does not support notifications.');
+	} else if (checkNotificationPromise()) {
+		Notification.requestPermission().then(permission => {
+			handlePermission(permission);
+		});
+	} else {
+		Notification.requestPermission(permission => {
+			handlePermission(permission);
+		});
+	}
+};
+
+const notification = new Notification('To do list', {
+	body: 'Hey! Your task is now overdue.',
+	icon: { icon },
+});
+
+let newNotification;
+let interval;
+document.addEventListener('visibilitychange', () => {
+	if (document.visibilityState === 'hidden') {
+		interval = setInterval(() => {
+			newNotification = new Notification('To do list', {
+				body: 'You have some tasks left',
+			});
+		}, 1800000);
+	} else {
+		if (interval) clearInterval(interval);
+		if (newNotification) newNotification.close();
+	}
+});
+
+askNotificationPermission();

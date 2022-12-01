@@ -54,27 +54,6 @@ export const deleteTask = id => {
 	persistTasks('active', state.active);
 };
 
-const init = () => {
-	const todoTasks = localStorage.getItem('tasks');
-	const activeTasks = localStorage.getItem('active');
-	const completedTasks = localStorage.getItem('completed');
-
-	if (!todoTasks) return;
-
-	// Initialize the state with the fetched data
-	state.todo = JSON.parse(todoTasks);
-	state.active = JSON.parse(activeTasks);
-	state.completed = JSON.parse(completedTasks);
-};
-init();
-
-const clearBookmarks = () => {
-	localStorage.clear('tasks');
-	localStorage.clear('active');
-	localStorage.clear('completed');
-};
-//clearBookmarks();
-
 // Push notifications
 const checkNotificationPromise = () => {
 	try {
@@ -102,23 +81,42 @@ const askNotificationPermission = () => {
 	}
 };
 
-//const notification = new Notification('To do list', {
-//body: 'Hey! Your task is now overdue.',
-//icon: { icon },
-//});
-
-let newNotification;
-let interval;
+let notification;
 document.addEventListener('visibilitychange', () => {
 	if (document.visibilityState === 'hidden') {
-		setTimeout(() => {
-			newNotification = new Notification('To do list', {
-				body: 'You have some tasks left',
-			});
-		}, 1000);
+		for (let i = 0; i < 24; i++) {
+			if (state.todo.length === 0) break;
+
+			setTimeout(() => {
+				notification = new Notification('To do list', {
+					body: 'You have some tasks left',
+				});
+			}, 3600000);
+		}
 	} else {
-		if (newNotification) newNotification.close();
+		if (notification) notification.close();
 	}
 });
 
-askNotificationPermission();
+const init = () => {
+	const todoTasks = localStorage.getItem('tasks');
+	const activeTasks = localStorage.getItem('active');
+	const completedTasks = localStorage.getItem('completed');
+
+	if (!todoTasks) return;
+
+	// Initialize the state with the fetched data
+	state.todo = JSON.parse(todoTasks);
+	state.active = JSON.parse(activeTasks);
+	state.completed = JSON.parse(completedTasks);
+
+	askNotificationPermission();
+};
+init();
+
+const clearBookmarks = () => {
+	localStorage.clear('tasks');
+	localStorage.clear('active');
+	localStorage.clear('completed');
+};
+//clearBookmarks();

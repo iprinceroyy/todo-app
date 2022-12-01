@@ -10,7 +10,7 @@
 }
 
 body {
-	min-height: 100vh;
+	max-height: 100vh;
 	display: grid;
 	grid-template-rows: 27vh 73vh;
 	font-family: var.$font-family;

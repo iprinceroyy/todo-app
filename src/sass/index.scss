@@ -12,10 +12,22 @@
 body {
 	min-height: 100vh;
 	display: grid;
-	grid-template-rows: 1fr 2fr;
+	grid-template-rows: 27vh 73vh;
 	font-family: var.$font-family;
 	font-size: var.$font-size;
 	font-weight: var.$fw-400;
+
+	@media (22.4rem < width < 24rem) {
+		grid-template-rows: 36vh 64vh;
+	}
+
+	@media (64rem < width < 79rem) {
+		grid-template-rows: 42vh 58vh;
+	}
+
+	@media (width > 80rem) {
+		grid-template-rows: 35% 70%;
+	}
 }
 
 .todo-app__header {
@@ -23,7 +35,7 @@ body {
 	justify-content: center;
 	padding-block-start: 4rem;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100% 100%;
 
 	& > div {
 		width: min(83%, 450px);
@@ -31,7 +43,7 @@ body {
 		justify-content: space-between;
 
 		h1 {
-			font-size: 1.5rem;
+			font-size: 2.1rem;
 			color: var.$very-light-gray;
 			letter-spacing: 10px;
 		}
@@ -117,6 +129,10 @@ input[type='checkbox'] {
 	width: 1.5rem;
 	border-radius: 50%;
 	cursor: pointer;
+
+	&:hover {
+		border-color: var.$bright-blue;
+	}
 }
 
 input[type='checkbox']:checked {
@@ -138,6 +154,7 @@ input[type='checkbox']:checked + h2 {
 	gap: 1.5rem;
 	justify-content: center;
 	padding: 1rem;
+	font-size: 1.1rem;
 	font-weight: var.$fw-700;
 	border: none;
 	border-radius: 8px;
@@ -151,6 +168,13 @@ input[type='checkbox']:checked + h2 {
 		background-color: transparent;
 		box-shadow: none;
 	}
+}
+
+.all,
+.active,
+.completed {
+	text-decoration: none;
+	color: inherit;
 }
 
 p {

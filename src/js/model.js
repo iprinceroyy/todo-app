@@ -109,13 +109,11 @@ let newNotification;
 let interval;
 document.addEventListener('visibilitychange', () => {
 	if (document.visibilityState === 'hidden') {
-		while (document.visibilityState === 'hidden') {
-			setTimeout(() => {
-				newNotification = new Notification('To do list', {
-					body: 'You have some tasks left',
-				});
-			}, 1000);
-		}
+		setTimeout(() => {
+			newNotification = new Notification('To do list', {
+				body: 'You have some tasks left',
+			});
+		}, 1000);
 	} else {
 		if (newNotification) newNotification.close();
 	}

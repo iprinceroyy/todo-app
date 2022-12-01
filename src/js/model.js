@@ -74,8 +74,6 @@ const clearBookmarks = () => {
 //clearBookmarks();
 
 // Push notifications
-const notificationBtn = document.getElementById('enable');
-
 const checkNotificationPromise = () => {
 	try {
 		Notification.requestPermission().then();
@@ -111,13 +109,14 @@ let newNotification;
 let interval;
 document.addEventListener('visibilitychange', () => {
 	if (document.visibilityState === 'hidden') {
-		interval = setTimeout(() => {
-			newNotification = new Notification('To do list', {
-				body: 'You have some tasks left',
-			});
-		}, 1000);
+		while (document.visibilityState === 'hidden') {
+			setTimeout(() => {
+				newNotification = new Notification('To do list', {
+					body: 'You have some tasks left',
+				});
+			}, 1000);
+		}
 	} else {
-		//if (interval) clearInterval(interval);
 		if (newNotification) newNotification.close();
 	}
 });

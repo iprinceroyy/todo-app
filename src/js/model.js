@@ -87,8 +87,7 @@ const checkNotificationPromise = () => {
 };
 
 const askNotificationPermission = () => {
-	const handlePermission = permission =>
-	Notification.permission === 'granted' ? 'none' : 'block');
+	const handlePermission = permission => (Notification.permission === 'granted' ? 'none' : 'block');
 
 	if (!('Notification' in window)) {
 		console.log('This browser does not support notifications.');
@@ -103,22 +102,22 @@ const askNotificationPermission = () => {
 	}
 };
 
-const notification = new Notification('To do list', {
-	body: 'Hey! Your task is now overdue.',
-	icon: { icon },
-});
+//const notification = new Notification('To do list', {
+//body: 'Hey! Your task is now overdue.',
+//icon: { icon },
+//});
 
 let newNotification;
 let interval;
 document.addEventListener('visibilitychange', () => {
 	if (document.visibilityState === 'hidden') {
-		interval = setInterval(() => {
+		interval = setTimeout(() => {
 			newNotification = new Notification('To do list', {
 				body: 'You have some tasks left',
 			});
-		}, 1800000);
+		}, 1000);
 	} else {
-		if (interval) clearInterval(interval);
+		//if (interval) clearInterval(interval);
 		if (newNotification) newNotification.close();
 	}
 });

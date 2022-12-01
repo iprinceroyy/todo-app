@@ -39,7 +39,10 @@ body {
 		img {
 			width: 1rem;
 			height: 1rem;
-			transition: all 0.2s ease-in;
+			transition: all 0.6s ease-in-out;
+			&:active {
+				rotate: 360deg;
+			}
 		}
 	}
 }

@@ -10,7 +10,8 @@
 }
 
 body {
-	max-height: 100vh;
+	min-height: 100vh;
+	position: relative;
 	display: grid;
 	grid-template-rows: 27vh 73vh;
 	font-family: var.$font-family;
@@ -31,7 +32,6 @@ body {
 }
 
 .todo-app__header {
-	position: relative;
 	display: flex;
 	justify-content: center;
 	padding-block-start: 4rem;

@@ -1,16 +1,14 @@
 @use 'variables' as var;
 
 .theme-1 {
+	background-color: var.$very-light-gray;
+
 	.todo-app__header {
 		background-image: url('../assets/images/bg-mobile-light.jpg');
 
 		@media (min-width: 45rem) {
 			background-image: url('../assets/images/bg-desktop-light.jpg');
 		}
-	}
-
-	main {
-		background-color: var.$very-light-gray;
 	}
 
 	.todo__inputs {
@@ -75,6 +73,8 @@
 /*  Theme 2  */
 
 .theme-2 {
+	background-color: var.$very-dark-blue;
+
 	.todo-app__header {
 		background-image: url('../assets/images/bg-mobile-dark.jpg');
 
@@ -83,12 +83,8 @@
 		}
 	}
 
-	main {
-		background-color: var.$very-dark-blue;
-	}
-
 	.todo__inputs {
-		background-color: var.$very-dark-desaturated-blue;
+		background-color: var.$very-dark-unsaturated-blue;
 
 		input[type='text'] {
 			color: var.$light-grayish-blue;
@@ -101,7 +97,7 @@
 
 	.todo__list {
 		color: var.$light-grayish-blue;
-		background-color: var.$very-dark-desaturated-blue;
+		background-color: var.$very-dark-unsaturated-blue;
 		box-shadow: 0 2rem 3rem -2rem black;
 
 		.list__item {
@@ -126,7 +122,7 @@
 
 	.list__item_status {
 		color: var.$dark-grayish-blue;
-		background-color: var.$very-dark-desaturated-blue;
+		background-color: var.$very-dark-unsaturated-blue;
 		box-shadow: 0 1rem 3rem -2rem black;
 	}
 

@@ -40,7 +40,9 @@ export const markCompleted = id => {
 export const clearCompleted = () => {
 	if (state.active.length == 0) return;
 	state.todo = [...state.todo.filter(item => !item.marked)];
+	state.completed = [];
 
+	persistTasks('completed', state.completed);
 	persistTasks('tasks', state.todo);
 };
 

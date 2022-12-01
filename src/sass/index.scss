@@ -11,27 +11,16 @@
 
 body {
 	min-height: 100vh;
-	position: relative;
-	display: grid;
-	grid-template-rows: 27vh 73vh;
 	font-family: var.$font-family;
 	font-size: var.$font-size;
 	font-weight: var.$fw-400;
-
-	@media (22.4rem < width < 24rem) {
-		grid-template-rows: 36vh 64vh;
-	}
-
-	@media (64rem < width < 79rem) {
-		grid-template-rows: 42vh 58vh;
-	}
-
-	@media (width > 80rem) {
-		grid-template-rows: 35% 70%;
-	}
 }
 
 .todo-app__header {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 15rem;
 	display: flex;
 	justify-content: center;
 	padding-block-start: 4rem;

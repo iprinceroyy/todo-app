@@ -168,3 +168,13 @@ p {
 	text-align: center;
 	margin-block-start: 1rem;
 }
+
+.attribution {
+	position: absolute;
+	left: 46%;
+	bottom: 2rem;
+	text-align: center;
+	a {
+		color: var.$bright-blue;
+	}
+}

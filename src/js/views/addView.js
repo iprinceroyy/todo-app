@@ -7,6 +7,10 @@ class AddView {
 		return task;
 	}
 
+	_isMarked() {
+		this._parentEl.firstChild;
+	}
+
 	_clear() {
 		this._parentEl.lastElementChild.value = '';
 	}
@@ -15,6 +19,7 @@ class AddView {
 		this._parentEl.addEventListener('submit', e => {
 			e.preventDefault();
 			handler();
+			console.log(this._parentEl.firstElementChild.ariaChecked);
 		});
 	}
 }

@@ -11,6 +11,7 @@
 
 body {
 	min-height: 100vh;
+	display: grid;
 	font-family: var.$font-family;
 	font-size: var.$font-size;
 	font-weight: var.$fw-400;
@@ -170,10 +171,8 @@ p {
 }
 
 .attribution {
-	position: absolute;
-	left: 46%;
-	bottom: 2rem;
 	text-align: center;
+	font-size: 0.8rem;
 	a {
 		color: var.$bright-blue;
 	}

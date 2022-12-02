@@ -1,14 +1,18 @@
 class AddView {
 	_parentEl = document.querySelector('.todo__inputs');
+	checkbox = document.querySelector('#add');
 
 	getItem() {
 		const task = this._parentEl.lastElementChild.value;
+		const marked = this._isMarked();
 		this._clear();
-		return task;
+		return { task, marked };
 	}
 
 	_isMarked() {
-		this._parentEl.firstChild;
+		const marked = this._parentEl.firstElementChild.firstElementChild.checked;
+		this._parentEl.firstElementChild.firstElementChild.checked = false;
+		return marked;
 	}
 
 	_clear() {
@@ -19,7 +23,6 @@ class AddView {
 		this._parentEl.addEventListener('submit', e => {
 			e.preventDefault();
 			handler();
-			console.log(this._parentEl.firstElementChild.ariaChecked);
 		});
 	}
 }

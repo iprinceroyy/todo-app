@@ -11,10 +11,10 @@ import darkView from './views/darkView';
 // To add task
 const controlInputs = () => {
 	// 1) Get task
-	const task = addView.getItem();
+	const { task, marked } = addView.getItem();
 
 	// 2) Add task
-	model.addTask(task);
+	model.addTask(task, marked);
 
 	// 3) Render task
 	listView.render(model.state.todo, model.state.active);

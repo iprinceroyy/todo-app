@@ -10,10 +10,10 @@ const persistTasks = (key, val) => {
 	localStorage.setItem(key, JSON.stringify(val));
 };
 
-export const addTask = task => {
-	state.todo.push({ id: Date.now().toString(), task, marked: false });
-	state.active.push({ id: Date.now().toString(), task, marked: false });
-
+export const addTask = (task, marked) => {
+	state.todo.push({ id: Date.now().toString(), task, marked });
+	state.active.push({ id: Date.now().toString(), task, marked });
+	console.log(state.todo);
 	// Store the data to the web storage
 	persistTasks('tasks', state.todo);
 	persistTasks('active', state.active);

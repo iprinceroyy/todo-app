@@ -10,8 +10,8 @@ class AddView {
 	}
 
 	_isMarked() {
-		const marked = this._parentEl.firstElementChild.firstElementChild.checked;
-		this._parentEl.firstElementChild.firstElementChild.checked = false;
+		const marked = this._parentEl.firstElementChild.checked;
+		this._parentEl.firstElementChild.checked = false;
 		return marked;
 	}
 

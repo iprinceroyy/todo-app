@@ -12,7 +12,6 @@
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -57,25 +56,12 @@ Users should be able to:
 
 Now, I'm more confident in **MVC architecture**. Combining ES6 modules & ES6 classes together to make modular, scalable, & flexible app. Abstracted each function into a module. Further I want to correlate mvc architecture with React library.
 
-```js
-const proudOfThisFunc = () => {
-  
-}
-```
-
 ### Continued development
 
 Implementing this architecture using some frameworks/library such as ReactJS to optimise the app more & handle a large code base; coupled with both frontend & backend.
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 ## Author
 
 - Frontend Mentor - [@iprinceroyy](https://www.frontendmentor.io/profile/iprinceroyy)
 - Twitter - [@prince_popups](https://www.twitter.com/@prince_popups)
-
-## Acknowledgments
 

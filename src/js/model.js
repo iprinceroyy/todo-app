@@ -13,7 +13,7 @@ const persistTasks = (key, val) => {
 export const addTask = (task, marked) => {
 	state.todo.push({ id: Date.now().toString(), task, marked });
 	state.active.push({ id: Date.now().toString(), task, marked });
-	console.log(state.todo);
+
 	// Store the data to the web storage
 	persistTasks('tasks', state.todo);
 	persistTasks('active', state.active);
@@ -38,7 +38,7 @@ export const markCompleted = id => {
 };
 
 export const clearCompleted = () => {
-	if (state.active.length == 0) return;
+	if (state.todo.length == 0) return;
 	state.todo = [...state.todo.filter(item => !item.marked)];
 	state.completed = [];
 

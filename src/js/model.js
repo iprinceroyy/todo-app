@@ -91,7 +91,7 @@ document.addEventListener('visibilitychange', () => {
 				notification = new Notification('To do list', {
 					body: 'You have some tasks left',
 				});
-			}, 1000);
+			}, 3600000);
 		}
 	} else {
 		if (notification) notification.close();

@@ -88,7 +88,9 @@ const askNotificationPermission = () => {
 let notification;
 document.addEventListener('visibilitychange', () => {
 	if (document.visibilityState === 'hidden') {
-		for (let i = 0; i < 24; i++) {
+		let i = 24 - new Date().getHours();
+		console.log(i);
+		while (i > 0) {
 			if (state.todo.length === 0) break;
 
 			setTimeout(() => {
@@ -96,6 +98,7 @@ document.addEventListener('visibilitychange', () => {
 					body: 'You have some tasks left',
 				});
 			}, 3600000);
+			i--;
 		}
 	} else {
 		if (notification) notification.close();

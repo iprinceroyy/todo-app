@@ -7,7 +7,8 @@ import clearView from './views/clearView';
 import allView from './views/allView';
 import activeView from './views/activeView';
 import completedView from './views/completedView';
-import darkView from './views/darkView';
+import themeView from './views/ThemeView';
+
 // To add task
 const controlInputs = () => {
 	// 1) Get task
@@ -63,6 +64,14 @@ const controlCompleted = () => {
 	listView.render(model.state.completed, model.state.active);
 };
 
+const controlTheme = () => {
+	// 1) Get theme
+	const currTheme = themeView.getThemeNum();
+
+	// 2) save the theme state
+	model.changeTheme(currTheme);
+};
+
 const init = () => {
 	addView.addHandlerSubmit(controlInputs);
 	markView.addHandlerMark(controlMark);
@@ -72,6 +81,7 @@ const init = () => {
 	activeView.addHandlerActiveView(controlActive);
 	completedView.addHandlerCompleteView(controlCompleted);
 	listView.render(model.state.todo, model.state.active);
-	darkView.addHandlerToggle();
+	themeView.addHandlerToggle(controlTheme);
+	themeView.setTheme(model.state.theme);
 };
 init();

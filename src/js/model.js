@@ -1,9 +1,8 @@
-import { icon } from '../assets/images/icon-moon.svg';
-
 export const state = {
 	todo: [],
 	completed: [],
 	active: [],
+	theme: 'theme-1',
 };
 
 const persistTasks = (key, val) => {
@@ -54,6 +53,11 @@ export const deleteTask = id => {
 	persistTasks('active', state.active);
 };
 
+export const changeTheme = theme => {
+	state.theme = theme;
+	persistTasks('theme', theme);
+};
+
 // Push notifications
 const checkNotificationPromise = () => {
 	try {
@@ -98,10 +102,12 @@ document.addEventListener('visibilitychange', () => {
 	}
 });
 
+// Initial call
 const init = () => {
 	const todoTasks = localStorage.getItem('tasks');
 	const activeTasks = localStorage.getItem('active');
 	const completedTasks = localStorage.getItem('completed');
+	const themeChoice = localStorage.getItem('theme');
 
 	if (!todoTasks) return;
 
@@ -109,6 +115,7 @@ const init = () => {
 	state.todo = JSON.parse(todoTasks);
 	state.active = JSON.parse(activeTasks);
 	state.completed = JSON.parse(completedTasks);
+	state.theme = JSON.parse(themeChoice);
 
 	askNotificationPermission();
 };

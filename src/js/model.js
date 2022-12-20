@@ -2,7 +2,7 @@ export const state = {
 	todo: [],
 	completed: [],
 	active: [],
-	theme: 'theme-1',
+	theme: 'theme-2',
 };
 
 const persistTasks = (key, val) => {
@@ -122,11 +122,11 @@ const init = () => {
 
 	askNotificationPermission();
 };
-init();
+//init();
 
 const clearBookmarks = () => {
 	localStorage.clear('tasks');
 	localStorage.clear('active');
 	localStorage.clear('completed');
 };
-//clearBookmarks();
+clearBookmarks();

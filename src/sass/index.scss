@@ -24,6 +24,10 @@ body {
 	padding-block-start: 4rem;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
+	@media (min-width: 1024px) {
+		padding-block-start: 6rem;
+		height: 17rem;
+	}
 
 	& > div {
 		width: min(83%, 450px);
@@ -34,6 +38,9 @@ body {
 			font-size: 2.1rem;
 			color: var.$very-light-gray;
 			letter-spacing: 10px;
+			@media (min-width: 1024px) {
+				font-size: 3rem;
+			}
 		}
 
 		img {
@@ -55,6 +62,9 @@ main {
 .todo__container {
 	position: absolute;
 	top: 8rem;
+	@media (min-width: 1024px) {
+		top: 10rem;
+	}
 	z-index: 3;
 	width: min(83%, 450px);
 	display: flex;

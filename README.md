@@ -2,16 +2,17 @@
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
+- [Todo app solution](#todo-app-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+  - [Author](#author)
 
 ## Overview
 
@@ -32,7 +33,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./scre.jpg)
+![](./src/assets/design/active-states-dark.jpg)
 
 ### Links
 
@@ -45,23 +46,22 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
+- CSS Flexbox
 - CSS Grid
 - Mobile-first workflow
 - MVC architecture
 - ES6 Modules
-- ES6 Classes 
+- ES6 Classes
 
 ### What I learned
 
-Now, I'm more confident in **MVC architecture**. Combining ES6 modules & ES6 classes together to make modular, scalable, & flexible app. Abstracted each function into a module. Further I want to correlate mvc architecture with React library.
+Now, I'm more confident in **MVC architecture**. Combining ES6 modules & ES6 classes to make a modular, scalable, & flexible app. Abstracted each function into a module. Further, I want to co-relate MVC architecture with React library.
 
 ### Continued development
 
-Implementing this architecture using some frameworks/library such as ReactJS to optimise the app more & handle a large code base; coupled with both frontend & backend.
+Implementing this architecture using some frameworks/libraries such as ReactJS to optimize the app more & handle a large code base; coupled with both frontend & backend.
 
 ## Author
 
 - Frontend Mentor - [@iprinceroyy](https://www.frontendmentor.io/profile/iprinceroyy)
 - Twitter - [@prince_popups](https://www.twitter.com/@prince_popups)
-

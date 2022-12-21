@@ -25,12 +25,12 @@ body {
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	@media (min-width: 1024px) {
-		padding-block-start: 6rem;
-		height: 17rem;
+		padding-block-start: 5rem;
+		height: 17.5rem;
 	}
 
 	& > div {
-		width: min(83%, 450px);
+		width: min(83%, 550px);
 		display: flex;
 		justify-content: space-between;
 
@@ -66,7 +66,7 @@ main {
 		top: 10rem;
 	}
 	z-index: 3;
-	width: min(83%, 450px);
+	width: min(83%, 550px);
 	display: flex;
 	flex-direction: column;
 	gap: 1.3rem;
@@ -80,6 +80,9 @@ main {
 	border-radius: 5px;
 	padding-block: 0.8rem;
 	padding-inline: 1.5rem;
+	@media (min-width: 1024px) {
+		padding-block: 1rem;
+	}
 
 	input[type='text'] {
 		width: 100%;

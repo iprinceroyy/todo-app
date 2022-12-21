@@ -10,6 +10,8 @@
     - [Links](#links)
   - [My process](#my-process)
     - [Built with](#built-with)
+    - [Dependencies](#dependencies)
+    - [Running locally](#running-locally)
     - [What I learned](#what-i-learned)
     - [Continued development](#continued-development)
   - [Author](#author)
@@ -39,8 +41,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL here](https://your-solution-url.com)
-- Live Site URL: [Live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL here](https://www.frontendmentor.io/solutions/todo-app-E1WQLoL2_3)
+- Live Site URL: [Live site URL here](https://app-todo-25.netlify.app/)
 
 ## My process
 
@@ -54,6 +56,24 @@ Users should be able to:
 - MVC architecture
 - ES6 Modules
 - ES6 Classes
+
+### Dependencies
+
+- core-js
+- regenerator-runtime
+- transformer-sass
+- parcel
+
+### Running locally
+
+From the repo:
+
+- Fork the repo
+- Clone it via command `git clone <URL of your forked repo>`
+- cd <forked repo directory>
+- Type `npm i` in your bash/command line
+- Type `npm run build` in your bash/command line for production
+- Type `npm start` to start your local development server
 
 ### What I learned
 

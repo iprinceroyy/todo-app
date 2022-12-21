@@ -33,7 +33,10 @@ Users should be able to:
 
 ### Screenshot
 
-![](./src/assets/design/active-states-dark.jpg)
+|                      Dark                       | Light                                            |
+| :---------------------------------------------: | ------------------------------------------------ |
+|  :------------------------------------------:   |
+| ![](./src/assets/design/mobile-design-dark.jpg) | ![](./src/assets/design/mobile-design-light.jpg) |
 
 ### Links
 

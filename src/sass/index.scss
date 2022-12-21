@@ -35,22 +35,20 @@ body {
 		justify-content: space-between;
 
 		h1 {
-			font-size: 2.1rem;
+			font-size: clamp(2.1rem, 1.86rem + 0.985vw, 2.5rem);
 			color: var.$very-light-gray;
-			letter-spacing: 10px;
-			@media (min-width: 1024px) {
-				font-size: 2.5rem;
-				letter-spacing: 15px;
-			}
+			letter-spacing: clamp(0.625rem, 0.444rem + 0.77vw, 0.9375rem);
 		}
 
 		img {
 			width: 1.5rem;
 			height: 1.5rem;
+			transition: all 0.6s ease-in-out;
+
 			@media (min-width: 1024px) {
 				margin-block-start: 0.55rem;
 			}
-			transition: all 0.6s ease-in-out;
+
 			&:active {
 				rotate: 360deg;
 			}
@@ -66,14 +64,15 @@ main {
 .todo__container {
 	position: absolute;
 	top: 8rem;
-	@media (min-width: 1024px) {
-		top: 9.95rem;
-	}
 	z-index: 3;
 	width: min(83%, 550px);
 	display: flex;
 	flex-direction: column;
 	gap: 1.4rem;
+
+	@media (min-width: 1024px) {
+		top: 9.95rem;
+	}
 }
 
 .todo__inputs {

@@ -35,7 +35,6 @@ Users should be able to:
 
 |                      Dark                       | Light                                            |
 | :---------------------------------------------: | ------------------------------------------------ |
-|  :------------------------------------------:   |
 | ![](./src/assets/design/mobile-design-dark.jpg) | ![](./src/assets/design/mobile-design-light.jpg) |
 
 ### Links

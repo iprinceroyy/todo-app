@@ -7,7 +7,7 @@ import clearView from './views/clearView';
 import allView from './views/allView';
 import activeView from './views/activeView';
 import completedView from './views/completedView';
-import themeView from './views/ThemeView';
+import themeView from './views/themeView';
 
 // To add task
 const controlInputs = () => {

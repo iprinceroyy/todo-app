@@ -122,11 +122,11 @@ const init = () => {
 
 	askNotificationPermission();
 };
-//init();
+init();
 
 const clearBookmarks = () => {
 	localStorage.clear('tasks');
 	localStorage.clear('active');
 	localStorage.clear('completed');
 };
-clearBookmarks();
+//clearBookmarks();

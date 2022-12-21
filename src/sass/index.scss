@@ -25,7 +25,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	@media (min-width: 1024px) {
-		padding-block: 4.4rem;
+		padding-block: 4.45rem;
 		height: 18rem;
 	}
 
@@ -46,7 +46,7 @@ body {
 		img {
 			width: 1.5rem;
 			height: 1.5rem;
-			margin-block-start: 0.5rem;
+			margin-block-start: 0.55rem;
 			transition: all 0.6s ease-in-out;
 			&:active {
 				rotate: 360deg;
@@ -70,7 +70,7 @@ main {
 	width: min(83%, 550px);
 	display: flex;
 	flex-direction: column;
-	gap: 1.3rem;
+	gap: 1.4rem;
 }
 
 .todo__inputs {

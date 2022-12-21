@@ -25,8 +25,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	@media (min-width: 1024px) {
-		padding-block-start: 5rem;
-		height: 17.5rem;
+		height: 18rem;
 	}
 
 	& > div {
@@ -63,7 +62,7 @@ main {
 	position: absolute;
 	top: 8rem;
 	@media (min-width: 1024px) {
-		top: 10rem;
+		top: 9.95rem;
 	}
 	z-index: 3;
 	width: min(83%, 550px);
@@ -81,7 +80,7 @@ main {
 	padding-block: 0.8rem;
 	padding-inline: 1.5rem;
 	@media (min-width: 1024px) {
-		padding-block: 1rem;
+		padding-block: 1.1rem;
 	}
 
 	input[type='text'] {

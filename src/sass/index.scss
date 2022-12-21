@@ -84,6 +84,7 @@ main {
 
 	input[type='text'] {
 		width: 100%;
+		font-size: var.$font-size;
 		font-family: var.$font-family;
 		border: none;
 		outline: 3px solid transparent;

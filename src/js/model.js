@@ -108,7 +108,6 @@ document.addEventListener('visibilitychange', () => {
 
 // Initial call
 const init = () => {
-	serviceWorkerRegistration.register();
 	const todoTasks = localStorage.getItem('tasks');
 	const activeTasks = localStorage.getItem('active');
 	const completedTasks = localStorage.getItem('completed');
@@ -132,3 +131,11 @@ const clearBookmarks = () => {
 	localStorage.clear('completed');
 };
 //clearBookmarks();
+
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', () => {
+		navigator.serviceWorker.register('../../serviceWorker').then(() => {
+			console.log('Service Worker Registered');
+		});
+	});
+}

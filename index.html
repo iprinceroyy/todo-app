@@ -8,6 +8,7 @@
 		<meta name="description" content="Todo app created using vanilla js" />
 
 		<link rel="manifest" href="./manifest.json" />
+		<link rel="apple-touch-icon" href="./src/assets/images/favicon-32x32.png" />
 
 		<link rel="icon" type="image/png" sizes="32x32" href="./src/assets/images/favicon-32x32.png" />
 
@@ -17,10 +18,12 @@
 		<!-- Main Script -->
 		<script type="module" src="./src/js/controller.js"></script>
 
-		<script>
+		<script type="module">
 			if ('serviceWorker' in navigator) {
 				window.addEventListener('load', () => {
-					navigator.serviceWorker.register('./sw.js', import.meta.url);
+					navigator.serviceWorker.register(new URL('./serviceWorker.js', import.meta.url), {
+						type: 'module',
+					});
 				});
 			}
 		</script>

@@ -1,3 +1,5 @@
+import * as serviceWorkerRegistration from '../../serviceWorkerRegistration';
+
 export const state = {
 	todo: [],
 	completed: [],
@@ -121,6 +123,7 @@ const init = () => {
 	state.theme = JSON.parse(themeChoice);
 
 	askNotificationPermission();
+	serviceWorkerRegistration.register();
 };
 init();
 

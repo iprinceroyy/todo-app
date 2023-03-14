@@ -1,5 +1,3 @@
-import * as serviceWorkerRegistration from '../../serviceWorkerRegistration';
-
 export const state = {
 	todo: [],
 	completed: [],
@@ -71,40 +69,24 @@ const checkNotificationPromise = () => {
 	return true;
 };
 
-const askNotificationPermission = () => {
-	const handlePermission = permission => (Notification.permission === 'granted' ? 'none' : 'block');
+// let notification;
+// document.addEventListener('visibilitychange', () => {
+// 	if (document.visibilityState === 'hidden') {
+// 		let i = 24 - new Date().getHours();
+// 		while (i > 0) {
+// 			if (state.todo.length === 0) break;
 
-	if (!('Notification' in window)) {
-		console.log('This browser does not support notifications.');
-	} else if (checkNotificationPromise()) {
-		Notification.requestPermission().then(permission => {
-			handlePermission(permission);
-		});
-	} else {
-		Notification.requestPermission(permission => {
-			handlePermission(permission);
-		});
-	}
-};
-
-let notification;
-document.addEventListener('visibilitychange', () => {
-	if (document.visibilityState === 'hidden') {
-		let i = 24 - new Date().getHours();
-		while (i > 0) {
-			if (state.todo.length === 0) break;
-
-			setTimeout(() => {
-				notification = new Notification('To do list', {
-					body: 'You have some tasks left',
-				});
-			}, 3600000);
-			i--;
-		}
-	} else {
-		if (notification) notification.close();
-	}
-});
+// 			setTimeout(() => {
+// 				notification = new Notification('To do list', {
+// 					body: 'You have some tasks left',
+// 				});
+// 			}, 3600000);
+// 			i--;
+// 		}
+// 	} else {
+// 		if (notification) notification.close();
+// 	}
+// });
 
 // Initial call
 const init = () => {
@@ -120,8 +102,6 @@ const init = () => {
 	state.active = JSON.parse(activeTasks);
 	state.completed = JSON.parse(completedTasks);
 	state.theme = JSON.parse(themeChoice);
-
-	askNotificationPermission();
 };
 init();
 

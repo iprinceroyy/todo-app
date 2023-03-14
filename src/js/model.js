@@ -1,4 +1,4 @@
-import * as serviceWorkerRegistration from '../../serviceWorkerRegistration';
+import register from '../../serviceWorkerRegistration';
 
 export const state = {
 	todo: [],
@@ -91,7 +91,6 @@ let notification;
 document.addEventListener('visibilitychange', () => {
 	if (document.visibilityState === 'hidden') {
 		let i = 24 - new Date().getHours();
-		console.log(i);
 		while (i > 0) {
 			if (state.todo.length === 0) break;
 
@@ -123,7 +122,7 @@ const init = () => {
 	state.theme = JSON.parse(themeChoice);
 
 	askNotificationPermission();
-	serviceWorkerRegistration.register();
+	register();
 };
 init();
 

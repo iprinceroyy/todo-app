@@ -1,10 +1,10 @@
 {
 	"name": "Todo App by Prince",
-	"short_name": "Prince Roy",
+	"short_name": "Todo App",
 	"start_url": ".",
 	"display": "standalone",
-	"background_color": "#fdfdfd",
-	"theme_color": "#db4938",
+	"background_color": "#ffffff",
+	"theme_color": "#000000",
 	"orientation": "portrait-primary",
 	"icons": [
 		{

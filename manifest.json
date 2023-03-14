@@ -1,7 +1,6 @@
 {
 	"name": "Todo App by Prince",
 	"short_name": "Todo App",
-
 	"icons": [
 		{
 			"src": "./src/assets/images/favicon-32x32.png",
@@ -24,5 +23,5 @@
 	"start_url": "/index.html",
 	"display": "standalone",
 	"background_color": "#ffffff",
-	"theme_color": "#000000"
+	"theme_color": "#ffffff"
 }

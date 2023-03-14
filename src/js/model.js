@@ -134,7 +134,7 @@ const clearBookmarks = () => {
 
 if ('serviceWorker' in navigator) {
 	window.addEventListener('load', () => {
-		navigator.serviceWorker.register(new URL('../../serviceWorker')).then(() => {
+		navigator.serviceWorker.register(new URL('../../serviceWorker', import.meta.URL)).then(() => {
 			console.log('Service Worker Registered');
 		});
 	});

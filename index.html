@@ -5,6 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- displays site properly based on user's device -->
 
+		<meta name="description" content="Todo app created using vanilla js" />
+		<link rel="stylesheet" href="" />
+
+		<link rel="manifest" href="./manifest.json" />
+
 		<link rel="icon" type="image/png" sizes="32x32" href="./src/assets/images/favicon-32x32.png" />
 
 		<!-- Main Stylesheet-->
@@ -12,6 +17,14 @@
 
 		<!-- Main Script -->
 		<script type="module" src="./src/js/controller.js"></script>
+
+		<script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('./sw.js');
+				});
+			}
+		</script>
 
 		<title>Todo app</title>
 	</head>

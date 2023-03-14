@@ -1,0 +1,16 @@
+{
+	"name": "Todo App by Prince",
+	"short_name": "Prince Roy",
+	"start_url": "index.html",
+	"display": "standalone",
+	"background_color": "#fdfdfd",
+	"theme_color": "#db4938",
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "./src/assets/images/favicon-32x32.png",
+			"type": "image/png",
+			"sizes": "64x64 32x32 24x24 16x16"
+		}
+	]
+}

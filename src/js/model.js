@@ -1,4 +1,4 @@
-import register from '../../serviceWorkerRegistration';
+import { register } from '../../serviceWorkerRegistration';
 
 export const state = {
 	todo: [],
@@ -108,6 +108,7 @@ document.addEventListener('visibilitychange', () => {
 
 // Initial call
 const init = () => {
+	register();
 	const todoTasks = localStorage.getItem('tasks');
 	const activeTasks = localStorage.getItem('active');
 	const completedTasks = localStorage.getItem('completed');
@@ -122,7 +123,6 @@ const init = () => {
 	state.theme = JSON.parse(themeChoice);
 
 	askNotificationPermission();
-	register();
 };
 init();
 

@@ -58,35 +58,14 @@ export const changeTheme = theme => {
 	persistTasks('theme', theme);
 };
 
-// Push notifications
-const checkNotificationPromise = () => {
-	try {
-		Notification.requestPermission().then();
-	} catch (e) {
-		return false;
+// Service worker registration
+export const registerServiceWorker = () => {
+	if ('serviceWorker' in navigator) {
+		window.addEventListener('load', () =>
+			navigator.serviceWorker.register(new URL('../../serviceWorker', import.meta.url))
+		);
 	}
-
-	return true;
 };
-
-// let notification;
-// document.addEventListener('visibilitychange', () => {
-// 	if (document.visibilityState === 'hidden') {
-// 		let i = 24 - new Date().getHours();
-// 		while (i > 0) {
-// 			if (state.todo.length === 0) break;
-
-// 			setTimeout(() => {
-// 				notification = new Notification('To do list', {
-// 					body: 'You have some tasks left',
-// 				});
-// 			}, 3600000);
-// 			i--;
-// 		}
-// 	} else {
-// 		if (notification) notification.close();
-// 	}
-// });
 
 // Initial call
 const init = () => {
@@ -111,11 +90,3 @@ const clearBookmarks = () => {
 	localStorage.clear('completed');
 };
 //clearBookmarks();
-
-if ('serviceWorker' in navigator) {
-	window.addEventListener('load', () => {
-		navigator.serviceWorker.register(new URL('../../serviceWorker', import.meta.url)).then(() => {
-			console.log('Service Worker Registered');
-		});
-	});
-}

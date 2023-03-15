@@ -1,4 +1,5 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
+
 if (workbox) {
 	console.log('Yay! Workbox is loaded !');
 	workbox.precaching.precacheAndRoute([]);
@@ -17,6 +18,7 @@ if (workbox) {
 			],
 		})
 	);
+
 	/* Make your JS and CSS âš¡ fast by returning the assets from the cache,
   while making sure they are updated in the background for the next use.
   */
@@ -29,6 +31,7 @@ if (workbox) {
 			cacheName: 'assets',
 		})
 	);
+
 	// cache google fonts
 	workbox.routing.registerRoute(
 		new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
@@ -41,6 +44,7 @@ if (workbox) {
 			],
 		})
 	);
+
 	// add offline analytics
 	workbox.googleAnalytics.initialize();
 	/* Install a new service worker and have it update

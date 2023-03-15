@@ -73,6 +73,16 @@ const controlTheme = () => {
 };
 
 const init = () => {
+	// Register service worker
+	model.registerServiceWorker();
+
+	// Render user cached theme choice
+	themeView.setTheme(model.state.theme);
+
+	// Render user cached tasks
+	listView.render(model.state.todo, model.state.active);
+
+	// Functionality
 	addView.addHandlerSubmit(controlInputs);
 	markView.addHandlerMark(controlMark);
 	clearView.addHandler(controlClear);
@@ -80,8 +90,7 @@ const init = () => {
 	allView.addHandlerAllView(controlAll);
 	activeView.addHandlerActiveView(controlActive);
 	completedView.addHandlerCompleteView(controlCompleted);
-	listView.render(model.state.todo, model.state.active);
 	themeView.addHandlerToggle(controlTheme);
-	themeView.setTheme(model.state.theme);
 };
+
 init();

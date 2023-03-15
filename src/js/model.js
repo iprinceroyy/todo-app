@@ -2,7 +2,7 @@ export const state = {
 	todo: [],
 	completed: [],
 	active: [],
-	theme: 'theme-2',
+	theme: '',
 };
 
 const persistTasks = (key, val) => {

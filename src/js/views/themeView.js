@@ -10,23 +10,30 @@ class ThemeView {
 	}
 
 	setTheme(theme) {
-		this._appEl.classList.add('todo-app', `${theme}`);
+		theme === 'theme-2'
+			? this._updateClasslistAndAttributes('theme-2', icon1)
+			: this._updateClasslistAndAttributes('theme-1', icon2);
+	}
+
+	_updateClasslistAndAttributes(theme, icon) {
+		this._appEl.classList = '';
+		this._appEl.classList.add('todo-app', theme);
+		this._toggle.setAttribute('src', `${icon}`);
+	}
+
+	_getClass() {
+		return this._appEl.classList[1];
 	}
 
 	addHandlerToggle(handler) {
 		this._toggle.addEventListener('click', () => {
-			const currTheme = this._appEl.classList[1];
-			this._appEl.classList = '';
+			const currTheme = this._getClass();
 
-			if (currTheme === 'theme-1') {
-				this.setTheme('theme-2');
-				this._toggle.setAttribute('src', `${icon1}`);
-			} else {
-				this.setTheme('theme-1');
-				this._toggle.setAttribute('src', `${icon2}`);
-			}
+			currTheme === 'theme-1'
+				? this._updateClasslistAndAttributes('theme-2', icon1)
+				: this._updateClasslistAndAttributes('theme-1', icon2);
 
-			this._themeNum = this._appEl.classList[1];
+			this._themeNum = this._getClass();
 			handler();
 		});
 	}

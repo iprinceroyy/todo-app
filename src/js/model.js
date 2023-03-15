@@ -2,7 +2,7 @@ export const state = {
 	todo: [],
 	completed: [],
 	active: [],
-	theme: '',
+	theme: 'theme-1',
 };
 
 const persistTasks = (key, val) => {
@@ -73,6 +73,7 @@ const init = () => {
 	const activeTasks = localStorage.getItem('active');
 	const completedTasks = localStorage.getItem('completed');
 	const themeChoice = localStorage.getItem('theme');
+	state.theme = JSON.parse(themeChoice);
 
 	if (!todoTasks) return;
 
@@ -80,7 +81,6 @@ const init = () => {
 	state.todo = JSON.parse(todoTasks);
 	state.active = JSON.parse(activeTasks);
 	state.completed = JSON.parse(completedTasks);
-	state.theme = JSON.parse(themeChoice);
 };
 init();
 
